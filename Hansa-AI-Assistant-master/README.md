@@ -1,5 +1,5 @@
-# Sophia AI Assistant
-Sophia is a desktop AI assistant built using Python that can perform various tasks such as answering questions like ChatGPT, opening desktop applications, browsing websites, and even making phone and WhatsApp calls. This project is designed to be versatile and extensible, with the ability to add more functionalities easily. It integrates the Hugging Face API, a free ChatGPT alternative to simulate conversation, and offers multiple activation methods for user commands.
+# HANSA AI Assistant
+HANSA is a desktop AI assistant built using Python that can perform various tasks such as answering questions like ChatGPT, opening desktop applications, browsing websites, and even making phone and WhatsApp calls. This project is designed to be versatile and extensible, with the ability to add more functionalities easily. It integrates the Hugging Face API, a free ChatGPT alternative to simulate conversation, and offers multiple activation methods for user commands.
 
 ## Demo Video
 You can check out the demo by clicking on the below image
@@ -9,7 +9,7 @@ You can check out the demo by clicking on the below image
 
 ## Features
 
-* **Voice Activation:** Activate Sophia by saying "Sophia."
+* **Voice Activation:** Activate HANSA by saying "HANSA."
 * **Text Input:** Type your queries and press enter to receive a response.
 * **App Control:** Open applications like Notepad and OneNote.
 * **Website Navigation:** Open websites like YouTube and Canva.
@@ -97,8 +97,8 @@ zope.interface==6.4.post2
 
 **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/sophia-ai-assistant.git
-   cd sophia-ai-assistant
+   git clone https://github.com/yourusername/hansa-ai-assistant.git
+   cd hansa-ai-assistant
 ```
 __To install the necessary dependencies and set up the API and database, I recommend checking out my YouTube tutorial series where I walk you through the entire process of building an AI assistant.__
 
@@ -107,16 +107,16 @@ __To install the necessary dependencies and set up the API and database, I recom
 ## Usage
 
 ### Activating the Assistant
-There are several ways to activate Sophia:
+There are several ways to activate HANSA:
 
-- **Voice Activation:** Simply say "Sophia."
+- **Voice Activation:** Simply say "HANSA."
 - **Text Input:** Type your query in the input box (e.g., "How are you?").
 - **Keyboard Shortcut:** Press `Window + J` to activate the assistant.
 
 ### Supported Commands
 
 #### Query Answering
-Ask Sophia questions, and she'll answer using the Hugging Face API, a free ChatGPT alternative.
+Ask HANSA questions, and she'll answer using the Hugging Face API, a free ChatGPT alternative.
 **Example:** "Tell me about yourself"
 
 #### Opening Applications
@@ -131,9 +131,9 @@ Ask Sophia questions, and she'll answer using the Hugging Face API, a free ChatG
 - "Play the video of the 99 names of Allah on YouTube"
 
 #### Phone and Messaging
-- "Sophia, make a phone call to Ali Hassan"
-- "Sophia, send a message to Ali Hassan"
-- "Sophia, make a video call on WhatsApp"
+- "HANSA, make a phone call to Ali Hassan"
+- "HANSA, send a message to Ali Hassan"
+- "HANSA, make a video call on WhatsApp"
 
 ### Future Enhancements
 - **Custom Application and Website Management:** Users will be able to add their applications and websites without needing to work with databases or SQL.

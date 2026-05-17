@@ -1,7 +1,7 @@
 import sqlite3
 
 
-conn = sqlite3.connect("sophia.db")
+conn = sqlite3.connect("hansa.db")
 
 cursor = conn.cursor()
 
