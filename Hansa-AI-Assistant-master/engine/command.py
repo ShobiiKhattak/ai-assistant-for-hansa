@@ -2,6 +2,8 @@ import time
 import pyttsx3
 import speech_recognition as sr
 import eel
+from textblob import TextBlob
+
 def speak(text):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
@@ -11,6 +13,15 @@ def speak(text):
     eel.DisplayMessage(text)
     engine.say(text)
     engine.runAndWait()
+
+def detect_language(text):
+    """Detect language of the input text"""
+    try:
+        blob = TextBlob(text)
+        lang = blob.detect_language()
+        return lang
+    except:
+        return 'en'  # Default to English
 
 @eel.expose
 def takeCommand():
@@ -25,8 +36,18 @@ def takeCommand():
     try:
         print('Recognizing...')
         eel.DisplayMessage('Recognizing...')
-        query = r.recognize_google(audio, language='en')
+        # Try English first
+        try:
+            query = r.recognize_google(audio, language='en')
+        except:
+            # Try Urdu if English fails
+            query = r.recognize_google(audio, language='ur')
+        
         print(f'User said: {query}')
+        # Detect which language was spoken
+        detected_lang = detect_language(query)
+        print(f'Detected language: {detected_lang}')
+        
         #speak(query)
         time.sleep(2)
         eel.DisplayMessage(query)
@@ -34,6 +55,7 @@ def takeCommand():
         
 
     except Exception as e:
+        print(f'Error: {e}')
         return ""
     
     return query.lower()
@@ -50,7 +72,7 @@ def allCommands():
         from engine.features import openCommand
         openCommand(query)
 
-    elif 'on youtube':
+    elif 'on youtube' in query:
         from engine.features import PlayYoutube
         PlayYoutube(query)
     else:
@@ -58,5 +80,3 @@ def allCommands():
 
 
     eel.ShowHood()
-
-    
